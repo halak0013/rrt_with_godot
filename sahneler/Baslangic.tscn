@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://kodlar/ana.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="yer" type="StaticBody" parent="."]
+transform = Transform( 64, 0, 0, 0, 0.1, 0, 0, 0, 36, 0, -0.0296583, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="yer"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="yer/CollisionShape"]
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+
+[node name="Timer" type="Timer" parent="yer"]
+autostart = true
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 54.2318, 0 )
+far = 150.0
+
+[connection signal="timeout" from="yer/Timer" to="." method="_on_Timer_timeout"]
