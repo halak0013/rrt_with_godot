@@ -59,7 +59,7 @@ func addNode(Swidth, SHeight, cordx, cordz, parents,end,minD):
 	zp = (minD*(randP.z-smaller.z))/dis+smaller.z
 	cordx.append(xp)
 	cordz.append(zp)
-	add_child(DarwLine3d.DrawCube(randP, 0.2, Color(0, 0.5, 0)))
+	#add_child(DarwLine3d.DrawCube(randP, 0.2, Color(0, 0.5, 0)))
 	drawLine(smaller,Vector3(xp,0.15,zp))
 	return not exitP(Vector3(xp,0.15,zp),end)
 

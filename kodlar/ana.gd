@@ -33,11 +33,10 @@ func _ready():
 func _process(delta):
 	#ek.drawLine(ek.randPoint(Swidth, SHeight), ek.randPoint(Swidth, SHeight))
 	#print(ek.randPoint(Swidth, SHeight))
-	#if (Input.is_mouse_button_pressed(BUTTON_LEFT)):
-		if enoOfPath:
-			enoOfPath=ek.addNode(Swidth, SHeight, cordX, cordZ, parents,end,3)
-		elif(not exitToProgram):
-			exitToProgram = ek.shortestPath(cordX,cordZ,parents)
+	if enoOfPath:
+		enoOfPath=ek.addNode(Swidth, SHeight, cordX, cordZ, parents,end,3)
+	elif(not exitToProgram):
+		exitToProgram = ek.shortestPath(cordX,cordZ,parents)
 	
 	
 
