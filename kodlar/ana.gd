@@ -12,13 +12,14 @@ var Swidth
 var SHeight
 var start
 var end
-var enoOfPath=true
-var exitToProgram=false
+var enoOfPath = true
+var exitToProgram = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Swidth = $yer.transform.basis.get_scale().x-3
-	SHeight = $yer.transform.basis.get_scale().z-3
+	Swidth = $yer.transform.basis.get_scale().x - 3
+	SHeight = $yer.transform.basis.get_scale().z - 3
 	start = ek.randPoint(Swidth, SHeight)
 	end = ek.randPoint(Swidth, SHeight)
 	ek.drawStartEnd(start, end)
@@ -34,11 +35,9 @@ func _process(delta):
 	#ek.drawLine(ek.randPoint(Swidth, SHeight), ek.randPoint(Swidth, SHeight))
 	#print(ek.randPoint(Swidth, SHeight))
 	if enoOfPath:
-		enoOfPath=ek.addNode(Swidth, SHeight, cordX, cordZ, parents,end,3)
-	elif(not exitToProgram):
-		exitToProgram = ek.shortestPath(cordX,cordZ,parents)
-	
-	
+		enoOfPath = ek.addNode(Swidth, SHeight, cordX, cordZ, parents, end, 3)
+	elif not exitToProgram:
+		exitToProgram = ek.shortestPath(cordX, cordZ, parents)
 
 
 func _on_Timer_timeout():
