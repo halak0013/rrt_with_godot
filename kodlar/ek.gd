@@ -38,8 +38,8 @@ func distance(v1: Vector3, v2: Vector3):
 
 
 func drawStartEnd(vs: Vector3, ve: Vector3):
-	add_child(DarwLine3d.DrawCube(vs, 1, Color(0, 1, 1)))
-	add_child(DarwLine3d.DrawCube(ve, 1, Color(1, 0, 0)))
+	add_child(DarwLine3d.DrawCube(vs, 1, Color(0, 0.5, 0.5)))
+	add_child(DarwLine3d.DrawCube(ve, 1, Color(1, 0.4, 0)))
 
 
 
