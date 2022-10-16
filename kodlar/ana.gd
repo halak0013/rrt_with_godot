@@ -13,7 +13,7 @@ var SHeight
 var start
 var end
 var enoOfPath=true
-
+var exitToProgram=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,7 +36,8 @@ func _process(delta):
 	#if (Input.is_mouse_button_pressed(BUTTON_LEFT)):
 		if enoOfPath:
 			enoOfPath=ek.addNode(Swidth, SHeight, cordX, cordZ, parents,end,3)
-	#pass
+		elif(not exitToProgram):
+			exitToProgram = ek.shortestPath(cordX,cordZ,parents)
 	
 	
 
